@@ -109,8 +109,8 @@ def display_menu():
     print(
         """
 c: Remove | borders and convert to csv files
-m: Merge all text files into a single csv file
 h: Show header columns from csv file
+m: Merge all text files into a single csv file
 d: Delete Files
 e: Show Windows Explorer
 t: Create SQL tables for BULK
@@ -123,7 +123,7 @@ z: Make a folder then zip file | removing unneeded files first such txt files
 
 def start_program(src, dst):
     display_menu()
-    enter_mode = input("Enter Mode (c,m,h,d,e,t,f,u,z): ")
+    enter_mode = input("Enter Mode (c,h,m,d,e,t,f,u,z): ")
 
     os.chdir(source_directory)
 
@@ -159,7 +159,7 @@ def start_program(src, dst):
     elif enter_mode == "z":  # make a zip file
         make_folder(source_directory, dest_dir)
         u1 = input(
-            "Click any keys to continue. Depend on how large the file is. Upload time is vary. "
+            "Click any keys to continue. Depend on how large the file is. Upload time may vary. "
         )
         zip_files(source_directory, dest_dir)
         # copy_a_zip_file(source_directory, dest_dir)
@@ -167,7 +167,7 @@ def start_program(src, dst):
 
 print(
     """
-Welcome to SAP Data Converter v0.02
+Welcome to SAP Data Converter v0.03
       """
 )
 source_directory = input("Enter Source Folder txt (Ctrl+V here): ")

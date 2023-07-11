@@ -56,9 +56,15 @@ def read_header(file_name):
         # usecols=selected_columns,
         nrows=0,
     )
+    result_text = ""
     for hd in header:
-        print(f"{hd}", end=";")
-    print()
+        result_text = result_text + ";" + hd + ";"
+        # print(f"{hd}", end=";")
+
+    result_text = result_text.replace(";;", "**")
+    result_text = result_text.replace(";", "")
+    result_text = result_text.replace("**", ";")
+    print(result_text)
 
 
 if __name__ == "__main__":
